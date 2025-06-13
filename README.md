@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Notion 博客
 
-## Getting Started
+一个使用 Next.js、Tailwind CSS 和 Notion API 构建的极简风格个人博客。
 
-First, run the development server:
+## 功能特点
+
+- 使用 Notion 数据库作为 CMS
+- 响应式设计，适配各种设备
+- 暗色/亮色模式自动切换
+- 按标签分类文章
+- Markdown 内容渲染
+- 极简风格设计
+
+## 技术栈
+
+- [Next.js](https://nextjs.org/) - React 框架
+- [Tailwind CSS](https://tailwindcss.com/) - CSS 框架
+- [Notion API](https://developers.notion.com/) - 内容管理系统
+- [TypeScript](https://www.typescriptlang.org/) - 类型安全的 JavaScript 超集
+
+## 开始使用
+
+### 前提条件
+
+- Node.js 18.0.0 或更高版本
+- Notion 账户和 API 密钥
+- Notion 数据库（用于存储博客文章）
+
+### 安装
+
+1. 克隆仓库
+
+```bash
+git clone https://github.com/yourusername/notion-blog.git
+cd notion-blog
+```
+
+2. 安装依赖
+
+```bash
+npm install
+```
+
+3. 配置环境变量
+
+创建 `.env.local` 文件，并添加以下内容：
+
+```
+NOTION_API_KEY=your_notion_api_key_here
+NOTION_DATABASE_ID=your_notion_database_id_here
+```
+
+4. 启动开发服务器
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+访问 [http://localhost:3000](http://localhost:3000) 查看你的博客。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Notion 数据库设置
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+你需要在 Notion 中创建一个数据库，包含以下属性：
 
-## Learn More
+- `Title` (标题) - 文章标题
+- `Slug` (文本) - 文章 URL 路径
+- `Date` (日期) - 发布日期
+- `Tags` (多选) - 文章标签
+- `Excerpt` (文本) - 文章摘要
+- `Cover` (文件) - 封面图片
+- `Published` (复选框) - 是否发布
 
-To learn more about Next.js, take a look at the following resources:
+## 部署
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+你可以使用 [Vercel](https://vercel.com/) 一键部署此项目：
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/yourusername/notion-blog)
 
-## Deploy on Vercel
+## 许可证
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+此项目采用 MIT 许可证 - 详情请参阅 [LICENSE](LICENSE) 文件。

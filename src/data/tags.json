@@ -1,0 +1,92 @@
+[
+  {
+    "id": "92e3fe3f-b310-4c0b-a5c7-d6a13d2735b8",
+    "name": "K8S",
+    "color": "blue",
+    "description": null
+  },
+  {
+    "id": "45698362-3f9a-452b-a503-61d82862b342",
+    "name": "Rancher",
+    "color": "brown",
+    "description": null
+  },
+  {
+    "id": "036b9539-e58d-410a-87af-7d31b85340ab",
+    "name": "Airflow",
+    "color": "gray",
+    "description": null
+  },
+  {
+    "id": "d3bc2b56-caf7-41d7-bf21-3eed98d6b67c",
+    "name": "Notion",
+    "color": "yellow",
+    "description": null
+  },
+  {
+    "id": "c151ce78-76b6-4408-9af3-550246930d35",
+    "name": "Knowledge",
+    "color": "pink",
+    "description": null
+  },
+  {
+    "id": "5b07160d-953a-410c-ab09-4d2d60f6015d",
+    "name": "LLM",
+    "color": "orange",
+    "description": null
+  },
+  {
+    "id": "9cf41f2d-d2ba-4556-abea-04b951692ca0",
+    "name": "RAG",
+    "color": "blue",
+    "description": null
+  },
+  {
+    "id": "37d23808-322a-492d-b4b2-ee49879eebf1",
+    "name": "Prompt",
+    "color": "green",
+    "description": null
+  },
+  {
+    "id": "97152d85-0454-43a8-9d9d-405d218ebcf1",
+    "name": "LangChain",
+    "color": "green",
+    "description": null
+  },
+  {
+    "id": "09278292-d4ee-40dc-bfe7-51482d243c41",
+    "name": "LangGraph",
+    "color": "blue",
+    "description": null
+  },
+  {
+    "id": "78ba0d23-1a1e-4ebf-8495-74cb55192273",
+    "name": "DSPy",
+    "color": "red",
+    "description": null
+  },
+  {
+    "id": "e1a32a2a-a89b-4433-a0e6-31a5e025ae60",
+    "name": "Vector Store",
+    "color": "purple",
+    "description": null
+  },
+  {
+    "id": "9af1a9d1-bb7a-452b-a0fe-9ab5508094db",
+    "name": "AI",
+    "color": "default",
+    "description": null
+  },
+  {
+    "id": "7d7ffa20-9cae-4fc5-89ed-b84e5498e0f1",
+    "name": "小说",
+    "color": "green",
+    "description": null
+  },
+  {
+    "id": "027f5601-38c5-4ead-befc-f456e7bf0752",
+    "name": "MCP",
+    "color": "orange",
+    "description": null
+  }
+]
