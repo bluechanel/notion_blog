@@ -8,7 +8,7 @@ interface MainLayoutProps {
 
 export default function MainLayout({ children, activePage = 'home' }: MainLayoutProps) {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
       <Header activePage={activePage} />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {children}
