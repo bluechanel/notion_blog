@@ -93,9 +93,15 @@ async function getTags() {
 
 // 将Notion页面转换为博客文章元数据格式
 function mapNotionPageToPostMeta(page) {
-  
+
   // 提取封面
-  let coverImage = page.cover.file.url;
+  let coverImage = ""
+  if (page.cover.type === "external") {
+    coverImage = page.cover.external.url;
+  } else {
+    coverImage = page.cover.file.url;
+  }
+  
   // 更新时间
   let lastUpdated = page.last_edited_time;
   // 提取属性参数
@@ -141,6 +147,7 @@ function mapNotionPageToPostMeta(page) {
     date,
     tags,
     coverImage,
+    select,
     lastUpdated: lastUpdated
   };
 }
