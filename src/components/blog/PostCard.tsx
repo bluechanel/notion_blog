@@ -9,7 +9,7 @@ interface PostCardProps {
 
 export default function PostCard({ postMeta }: PostCardProps) {
   return (
-    <article className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+    <article className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out">
       {postMeta.coverImage && (
         <div className="relative h-48 w-full">
           <Image 
