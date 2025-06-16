@@ -6,12 +6,12 @@ interface HeaderProps {
 
 export default function Header({ activePage = 'home' }: HeaderProps) {
   return (
-    <header className="py-8 border-b border-gray-200 dark:border-gray-800">
+    <header className="fixed top-0 left-0 right-0 z-50 py-4 backdrop-blur-md bg-gray-100/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between sm:flex-row">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-0">
             <Link href="/" className="hover:text-gray-600 dark:hover:text-gray-300">
-              我的博客
+              Wiley Blog | AI/LLM developer blog
             </Link>
           </h1>
           <nav className="flex space-x-4">
@@ -25,7 +25,43 @@ export default function Header({ activePage = 'home' }: HeaderProps) {
               href="/tags" 
               className={`${activePage === 'tags' ? 'font-medium' : ''} text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white`}
             >
-              标签
+              收藏夹
+            </Link>
+            <Link 
+              href="/about" 
+              className={`${activePage === 'about' ? 'font-medium' : ''} text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white`}
+            >
+              书单
+            </Link>
+            <Link 
+              href="/about" 
+              className={`${activePage === 'about' ? 'font-medium' : ''} text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white`}
+            >
+              片单
+            </Link>
+            <Link 
+              href="/about" 
+              className={`${activePage === 'about' ? 'font-medium' : ''} text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white`}
+            >
+              照片
+            </Link>
+            <Link 
+              href="/about" 
+              className={`${activePage === 'about' ? 'font-medium' : ''} text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white`}
+            >
+              归档
+            </Link>
+            <Link 
+              href="/about" 
+              className={`${activePage === 'about' ? 'font-medium' : ''} text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white`}
+            >
+              留言
+            </Link>
+            <Link 
+              href="/about" 
+              className={`${activePage === 'about' ? 'font-medium' : ''} text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white`}
+            >
+              友链
             </Link>
             <Link 
               href="/about" 
