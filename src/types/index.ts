@@ -1,4 +1,4 @@
-// 博客文章类型定义
+// 博客文章元数据
 export interface PostMeta {
   id: string;
   title: string;
@@ -16,44 +16,7 @@ export interface Tag {
   name: string;
   color: string;
 }
-
-// Notion页面属性类型
-export interface NotionPageProperties {
-  Title: {
-    title: Array<{
-      plain_text: string;
-    }>;
-  };
-  Slug: {
-    rich_text: Array<{
-      plain_text: string;
-    }>;
-  };
-  Excerpt: {
-    rich_text: Array<{
-      plain_text: string;
-    }>;
-  };
-  Date: {
-    date: {
-      start: string;
-    };
-  };
-  Tags: {
-    multi_select: Array<{
-      id: string;
-      name: string;
-      color: string;
-    }>;
-  };
-  Cover: {
-    files: Array<{
-      file?: {
-        url: string;
-      };
-      external?: {
-        url: string;
-      };
-    }>;
-  };
+// 文章全部信息
+export interface Post extends PostMeta{
+  content: string;
 }

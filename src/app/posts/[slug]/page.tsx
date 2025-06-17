@@ -2,61 +2,48 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
-import { getPosts, getPost } from '../../../lib/notion';
-import { mapNotionPageToPost, formatDate, getTagColorClass } from '../../../lib/utils';
+import { formatDate } from '../../../lib/utils';
 import MainLayout from '../../../components/layout/MainLayout';
+import { getAllPosts, getPostBySlug } from '../../../lib/static-data';
+import TagButton from '../../../components/blog/TagButton';
 
 export const revalidate = 3600; // 每小时重新验证一次
 
 // 生成静态路径
 export async function generateStaticParams() {
-  const posts = await getPosts();
-  
-  return posts.map((post) => {
-    const properties = post.properties as any;
-    const slug = properties.Slug?.rich_text[0]?.plain_text || post.id;
-    
-    return {
-      slug,
-    };
-  });
+  const posts = await getAllPosts();
+  return posts.map((post) => ({
+    slug: post.slug
+  }));
+}
+
+type Props = {
+  params: { slug: string }
 }
 
 // 生成元数据
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const posts = await getPosts();
-  const post = posts.find((p) => {
-    const properties = p.properties as any;
-    const slug = properties.Slug?.rich_text[0]?.plain_text || p.id;
-    return slug === params.slug;
-  });
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const param = await params;
+  const post = await getPostBySlug(param.slug);
   
   if (!post) {
     return {
-      title: '文章未找到',
+      title: '文章未找到'
     };
   }
   
-  const properties = post.properties as any;
-  const title = properties.Title.title[0]?.plain_text || 'Untitled';
-  const excerpt = properties.Excerpt?.rich_text[0]?.plain_text || '';
-  
   return {
-    title: `${title} | 我的博客`,
-    description: excerpt,
+    title: `${post.title} | 我的博客`,
+    description: post.excerpt
   };
 }
 
 // 文章详情页面
-export default async function PostPage({ params }: { params: { slug: string } }) {
-  const posts = await getPosts();
-  const postData = posts.find((p) => {
-    const properties = p.properties as any;
-    const slug = properties.Slug?.rich_text[0]?.plain_text || p.id;
-    return slug === params.slug;
-  });
+export default async function PostPage({ params }: Props) {
+  const param = await params;
+  const post = await getPostBySlug(param.slug);
   
-  if (!postData) {
+  if (!post) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -70,44 +57,38 @@ export default async function PostPage({ params }: { params: { slug: string } })
     );
   }
   
-  // 获取文章内容
-  const { page, markdown } = await getPost(postData.id);
-  const post = mapNotionPageToPost(page, markdown);
-  
   return (
     <MainLayout>
-      <article className="max-w-3xl mx-auto">
-        <header className="mb-8">
-          <div className="flex flex-wrap gap-2 mb-4">
-            {post.tags.map((tag) => (
-              <span 
-                key={tag.id} 
-                className={`text-xs px-2 py-1 rounded-full ${getTagColorClass(tag.color)}`}
-              >
-                {tag.name}
-              </span>
-            ))}
+      <article className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
+        {post.coverImage && (
+          <div className="relative h-64 sm:h-96 w-full">
+            <Image 
+              src={post.coverImage} 
+              alt={post.title} 
+              fill 
+              className="object-cover"
+            />
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            {post.title}
-          </h1>
-          <div className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-            {formatDate(post.date)}
-          </div>
-          {post.coverImage && (
-            <div className="relative h-64 sm:h-96 w-full mb-8 rounded-lg overflow-hidden">
-              <Image 
-                src={post.coverImage} 
-                alt={post.title} 
-                fill 
-                className="object-cover"
-              />
-            </div>
-          )}
-        </header>
+        )}
         
-        <div className="prose prose-gray dark:prose-invert max-w-none">
-          <ReactMarkdown>{post.content}</ReactMarkdown>
+        <div className="p-8">
+          <header className="mb-8">
+            <div className="flex flex-wrap gap-2 mb-4">
+              {post.tags.map((tag) => (
+                <TagButton key={tag.id} tag={tag} />
+              ))}
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+              {post.title}
+            </h1>
+            <div className="text-sm text-gray-500 dark:text-gray-400">
+              {formatDate(post.date)}
+            </div>
+          </header>
+          
+          <div className="prose prose-lg prose-gray dark:prose-invert max-w-none">
+            <ReactMarkdown>{post.content}</ReactMarkdown>
+          </div>
         </div>
       </article>
     </MainLayout>

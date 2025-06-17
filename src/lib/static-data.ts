@@ -5,12 +5,13 @@
 
 import fs from 'fs';
 import path from 'path';
-import { PostMeta, Tag } from '../types';
+import { PostMeta, Post, Tag } from '../types';
 
 // 数据文件路径
 const DATA_DIR = path.join(process.cwd(), 'src', 'data');
 const POSTS_FILE = path.join(DATA_DIR, 'posts-meta.json');
 const TAGS_FILE = path.join(DATA_DIR, 'tags.json');
+const POST_FILE = path.join(DATA_DIR, 'content');
 
 // 缓存
 let postsCache: PostMeta[] | null = null;
@@ -71,9 +72,26 @@ export function getAllTags(): Tag[] {
 /**
  * 根据slug获取单个文章
  */
-export function getPostBySlug(slug: string): PostMeta | null {
+export function getPostBySlug(slug: string): Post | null {
   const posts = getAllPosts();
-  return posts.find(post => post.slug === slug) || null;
+  const post = posts.find(post => post.slug === slug) || null;
+  if (!post) {
+    return null;
+  }
+  const postPath = path.join(POST_FILE, `${post.slug}.md`);
+   // 检查文件是否存在
+   if (!fs.existsSync(postPath)) {
+    console.warn('文章内容文件不存在，请先运行 scripts/fetch-notion-data.js');
+    return null;
+  }
+  
+  // 读取文件内容
+  const postContent = fs.readFileSync(postPath, 'utf8');
+
+  return {
+    ...post,
+    content: postContent,
+  };
 }
 
 /**
