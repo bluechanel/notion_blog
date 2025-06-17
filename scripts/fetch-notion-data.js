@@ -10,7 +10,7 @@
 require('dotenv').config({ path: '.env.local' });
 const fs = require('fs');
 const path = require('path');
-const { Client } = require('@notionhq/client');
+const { Client, iteratePaginatedAPI } = require('@notionhq/client');
 const { NotionToMarkdown } = require('notion-to-md');
 const { se } = require('date-fns/locale');
 
@@ -154,93 +154,69 @@ function mapNotionPageToPostMeta(page) {
 
 // 主函数
 async function main() {
+
+  const blocks = []
+  for await (const block of iteratePaginatedAPI(notion.blocks.children.list, {
+    block_id: "1f3605ee-e889-808e-bedf-d661f0d90b42",
+  })) {
+    blocks.push(block)
+  }
+
+  fs.writeFileSync(
+    path.join(DATA_DIR, 'blocks.json'),
+    JSON.stringify(blocks, null, 2)
+  );
+
   try {
     // 获取所有标签
-    const tags = await getTags();
-    fs.writeFileSync(
-      path.join(DATA_DIR, 'tags.json'),
-      JSON.stringify(tags, null, 2)
-    );
-    console.log(`保存了 ${tags.length} 个标签到 src/data/tags.json`);
+    // const tags = await getTags();
+    // fs.writeFileSync(
+    //   path.join(DATA_DIR, 'tags.json'),
+    //   JSON.stringify(tags, null, 2)
+    // );
+    // console.log(`保存了 ${tags.length} 个标签到 src/data/tags.json`);
     
-    // 获取所有文章列表
-    const posts = await getPosts();
-    console.log(`找到 ${posts.length} 篇文章`);
+    // // 获取所有文章列表
+    // const posts = await getPosts();
+    // console.log(`找到 ${posts.length} 篇文章`);
 
 
-    // 处理文章元数据和内容
-    const postsMetadata = [];
+    // // 处理文章元数据和内容
+    // const postsMetadata = [];
     
-    for (const post of posts) {
-      try {
-        // 1. 处理文章元数据
-        const postMeta = mapNotionPageToPostMeta(post);
-        postsMetadata.push(postMeta);
-        console.log(`处理文章元数据: ${postMeta.title}`);
-        
-        // 2. 获取并保存文章内容到单独的文件
-        try {
-          const content = await getPostContent(post.id);
-          const contentFilePath = path.join(CONTENT_DIR, `${postMeta.slug}.md`);
-          fs.writeFileSync(contentFilePath, content);
-          console.log(`保存文章内容到: ${contentFilePath}`);
-        } catch (contentError) {
-          console.error(`获取文章 ${post.id} 内容时出错:`, contentError);
-          // 创建一个空的内容文件，以保持一致性
-          fs.writeFileSync(
-            path.join(CONTENT_DIR, `${postMeta.slug}.md`),
-            `# ${postMeta.title}\n\n*内容获取失败*`
-          );
-        }
-      } catch (error) {
-        console.error(`处理文章 ${post.id} 时出错:`, error);
-      }
-    }
-    
-    // 保存所有文章元数据
-    fs.writeFileSync(
-      path.join(DATA_DIR, 'posts-meta.json'),
-      JSON.stringify(postsMetadata, null, 2)
-    );
-    console.log(`保存了 ${postsMetadata.length} 篇文章元数据到 src/data/posts-meta.json`);
-    
-    // 为了向后兼容，也生成合并了内容的完整posts.json文件
-    // const postsWithContent = [];
-    // for (const meta of postsMetadata) {
+    // for (const post of posts) {
     //   try {
-    //     const contentPath = path.join(CONTENT_DIR, meta.contentFile);
-    //     const content = fs.existsSync(contentPath) 
-    //       ? fs.readFileSync(contentPath, 'utf-8')
-    //       : '';
+    //     // 1. 处理文章元数据
+    //     const postMeta = mapNotionPageToPostMeta(post);
+    //     postsMetadata.push(postMeta);
+    //     console.log(`处理文章元数据: ${postMeta.title}`);
         
-    //     // 创建包含内容的完整文章对象
-    //     const fullPost = {
-    //       ...meta,
-    //       content: content
-    //     };
-    //     delete fullPost.contentFile; // 移除内容文件引用
-    //     delete fullPost.rawProperties; // 移除原始属性，保持向后兼容
-        
-    //     postsWithContent.push(fullPost);
+    //     // 2. 获取并保存文章内容到单独的文件
+    //     try {
+    //       const content = await getPostContent(post.id);
+    //       const contentFilePath = path.join(CONTENT_DIR, `${postMeta.slug}.md`);
+    //       fs.writeFileSync(contentFilePath, content);
+    //       console.log(`保存文章内容到: ${contentFilePath}`);
+    //     } catch (contentError) {
+    //       console.error(`获取文章 ${post.id} 内容时出错:`, contentError);
+    //       // 创建一个空的内容文件，以保持一致性
+    //       fs.writeFileSync(
+    //         path.join(CONTENT_DIR, `${postMeta.slug}.md`),
+    //         `# ${postMeta.title}\n\n*内容获取失败*`
+    //       );
+    //     }
     //   } catch (error) {
-    //     console.error(`合并文章 ${meta.id} 内容时出错:`, error);
-    //     // 如果出错，至少保留元数据
-    //     const fallbackPost = { ...meta };
-    //     delete fallbackPost.contentFile;
-    //     delete fallbackPost.rawProperties;
-    //     fallbackPost.content = '';
-    //     postsWithContent.push(fallbackPost);
+    //     console.error(`处理文章 ${post.id} 时出错:`, error);
     //   }
     // }
     
-    // 保存向后兼容的完整文章数据
+    // // 保存所有文章元数据
     // fs.writeFileSync(
-    //   path.join(DATA_DIR, 'posts.json'),
-    //   JSON.stringify(postsWithContent, null, 2)
+    //   path.join(DATA_DIR, 'posts-meta.json'),
+    //   JSON.stringify(postsMetadata, null, 2)
     // );
-    // console.log(`保存了 ${postsWithContent.length} 篇完整文章到 src/data/posts.json (向后兼容)`);
+    // console.log(`保存了 ${postsMetadata.length} 篇文章元数据到 src/data/posts-meta.json`);
     
-    // console.log('所有Notion数据获取完成！');
   } catch (error) {
     console.error('获取Notion数据时出错:', error);
     process.exit(1);
