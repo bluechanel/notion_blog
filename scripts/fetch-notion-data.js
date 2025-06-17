@@ -179,19 +179,19 @@ async function main() {
         console.log(`处理文章元数据: ${postMeta.title}`);
         
         // 2. 获取并保存文章内容到单独的文件
-        // try {
-        //   const content = await getPostContent(post.id);
-        //   const contentFilePath = path.join(CONTENT_DIR, `${postMeta.slug}.md`);
-        //   fs.writeFileSync(contentFilePath, content);
-        //   console.log(`保存文章内容到: ${contentFilePath}`);
-        // } catch (contentError) {
-        //   console.error(`获取文章 ${post.id} 内容时出错:`, contentError);
-        //   // 创建一个空的内容文件，以保持一致性
-        //   fs.writeFileSync(
-        //     path.join(CONTENT_DIR, `${postMeta.slug}.md`),
-        //     `# ${postMeta.title}\n\n*内容获取失败*`
-        //   );
-        // }
+        try {
+          const content = await getPostContent(post.id);
+          const contentFilePath = path.join(CONTENT_DIR, `${postMeta.slug}.md`);
+          fs.writeFileSync(contentFilePath, content);
+          console.log(`保存文章内容到: ${contentFilePath}`);
+        } catch (contentError) {
+          console.error(`获取文章 ${post.id} 内容时出错:`, contentError);
+          // 创建一个空的内容文件，以保持一致性
+          fs.writeFileSync(
+            path.join(CONTENT_DIR, `${postMeta.slug}.md`),
+            `# ${postMeta.title}\n\n*内容获取失败*`
+          );
+        }
       } catch (error) {
         console.error(`处理文章 ${post.id} 时出错:`, error);
       }
