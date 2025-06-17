@@ -62,9 +62,17 @@ export default function TableOfContents({ className = '' }: TableOfContentsProps
                 }`}
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById(heading.id)?.scrollIntoView({
-                  behavior: 'smooth',
-                });
+                const element = document.getElementById(heading.id);
+                if (element) {
+                  const headerOffset = 100; // header高度加上一些额外空间
+                  const elementPosition = element.getBoundingClientRect().top;
+                  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                  });
+                }
               }}
             >
               {heading.text}

@@ -22,7 +22,7 @@ export default function Header({ activePage = 'home' }: HeaderProps) {
               首页
             </Link>
             <Link 
-              href="/tags" 
+              href="/about" 
               className={`${activePage === 'tags' ? 'font-medium' : ''} text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white`}
             >
               收藏夹
