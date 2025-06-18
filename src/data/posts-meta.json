@@ -20,5 +20,452 @@
     "coverImage": "https://raw.githubusercontent.com/bluechanel/blog_images/main/blog/RAG.png",
     "select": "技术",
     "lastUpdated": "2025-06-13T08:29:00.000Z"
+  },
+  {
+    "id": "1f3605ee-e889-808e-bedf-d661f0d90b42",
+    "title": "使用LLaMA-Factory微调Qwen3",
+    "slug": "1f3605ee-e889-808e-bedf-d661f0d90b42",
+    "excerpt": "本文从为什么需要微调开始，详细介绍了微调的作用、工具，数据集的构建、工具，数据集增强，实际微调步骤，微调参数配置。并使用gpt4o生成相关讲解图片。",
+    "date": "2025-05-14",
+    "tags": [
+      {
+        "id": "5b07160d-953a-410c-ab09-4d2d60f6015d",
+        "name": "LLM",
+        "color": "orange"
+      },
+      {
+        "id": "9af1a9d1-bb7a-452b-a0fe-9ab5508094db",
+        "name": "AI",
+        "color": "default"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/69879406-3cba-4b76-8705-afd21e544c88/%E8%AE%BE%E8%AE%A1%E8%A7%86%E8%A7%89%E5%BC%95%E5%AF%BC%E5%9B%BE_%281%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=1dd4fc72fd90654d00b8e935222be0492b434f09b1a267bdb6b5bf3b5a08c9a1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2025-05-20T07:50:00.000Z"
+  },
+  {
+    "id": "1ee605ee-e889-80b7-ab94-c8ba32c2fbda",
+    "title": "Prompt知识库",
+    "slug": "1ee605ee-e889-80b7-ab94-c8ba32c2fbda",
+    "excerpt": "此Prompt知识库包含作者从各个渠道收集的提示词，以示学习，包括Claude 、DeepSeek、Manus 、Cursor 等AI工具/模型的Prompt。不定时更新",
+    "date": "2025-05-09",
+    "tags": [
+      {
+        "id": "37d23808-322a-492d-b4b2-ee49879eebf1",
+        "name": "Prompt",
+        "color": "green"
+      },
+      {
+        "id": "9af1a9d1-bb7a-452b-a0fe-9ab5508094db",
+        "name": "AI",
+        "color": "default"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/d2bd6d10-3a51-45d8-9e53-caba14ed984f/%E5%88%9B%E5%BB%BA_Prompt_%E7%9F%A5%E8%AF%86%E5%BA%93%E5%9B%BE%E7%89%87.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=607f4f75a71db9f7ba56e7c34a7837764bc0a76b37481668b01dbdff9974adca&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2025-05-19T07:55:00.000Z"
+  },
+  {
+    "id": "1e3605ee-e889-80d4-89e3-c5f24730f271",
+    "title": "AI与人机交互演进：从浏览器自动化到接口化未来",
+    "slug": "1e3605ee-e889-80d4-89e3-c5f24730f271",
+    "excerpt": "作者通过人机交互演进，认为AI时代，人机交互将进一步被简化。",
+    "date": "2025-04-28",
+    "tags": [
+      {
+        "id": "9af1a9d1-bb7a-452b-a0fe-9ab5508094db",
+        "name": "AI",
+        "color": "default"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/953fa1f6-75a0-48e0-b4a6-9ff635cc495c/postspark_export_2025-04-27_17-43-31.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=fe14165c39fdcd926d0b44994752dbc85806930aca2fdea1188abd5439e9eaa0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2025-04-28T02:56:00.000Z"
+  },
+  {
+    "id": "1ba605ee-e889-8078-b7d8-d60ea6313211",
+    "title": "vllm部署的模型如何使用MCP？",
+    "slug": "1ba605ee-e889-8078-b7d8-d60ea6313211",
+    "excerpt": "本文介绍使用MCP-Bridge作为中间件代理OpenAI规范的接口，以使用MCP能力。并提供了详细的配置方法和实践指南。",
+    "date": "2025-03-18",
+    "tags": [
+      {
+        "id": "9af1a9d1-bb7a-452b-a0fe-9ab5508094db",
+        "name": "AI",
+        "color": "default"
+      },
+      {
+        "id": "027f5601-38c5-4ead-befc-f456e7bf0752",
+        "name": "MCP",
+        "color": "orange"
+      },
+      {
+        "id": "5b07160d-953a-410c-ab09-4d2d60f6015d",
+        "name": "LLM",
+        "color": "orange"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/7d10df59-56a0-453b-a898-141c31a7c0c9/PixPin_2025-03-18_16-59-35.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=7cdbf1cec22f8d990ce8806cbb978c64bfee5ca10d1098ed4746e75a4eb8b014&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2025-05-22T03:32:00.000Z"
+  },
+  {
+    "id": "19d605ee-e889-805b-821e-e02e8ac1f722",
+    "title": "通往AGI-结构化输出(Structured Outputs)",
+    "slug": "19d605ee-e889-805b-821e-e02e8ac1f722",
+    "excerpt": "本文主要介绍结构化输出以及Function call的重要性，并介绍其开源实现。",
+    "date": "2025-02-17",
+    "tags": [
+      {
+        "id": "9af1a9d1-bb7a-452b-a0fe-9ab5508094db",
+        "name": "AI",
+        "color": "default"
+      },
+      {
+        "id": "5b07160d-953a-410c-ab09-4d2d60f6015d",
+        "name": "LLM",
+        "color": "orange"
+      },
+      {
+        "id": "37d23808-322a-492d-b4b2-ee49879eebf1",
+        "name": "Prompt",
+        "color": "green"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/536c7100-62dc-478e-8124-a2b303c06f9b/img.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=b07153f564c8eb48574e479805f95b674e1a555d3e9a3ffb38d0e688017f6942&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2025-02-27T09:39:00.000Z"
+  },
+  {
+    "id": "199605ee-e889-80bd-b2aa-c34290a53cb8",
+    "title": "窦娥冤·新编(By Claude)",
+    "slug": "199605ee-e889-80bd-b2aa-c34290a53cb8",
+    "excerpt": "本篇是由Claude对戏剧“窦娥冤”的续写。",
+    "date": "2025-02-13",
+    "tags": [
+      {
+        "id": "9af1a9d1-bb7a-452b-a0fe-9ab5508094db",
+        "name": "AI",
+        "color": "default"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/191ab7a4-6cbc-466e-952f-604562b85964/43l71-3l2f8.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=6413d78af6b270f0c8fad70580b0dcc63c8c82d995a221dfa38969e56978eb12&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "",
+    "lastUpdated": "2025-02-13T06:41:00.000Z"
+  },
+  {
+    "id": "12e605ee-e889-8093-a063-e0a44f365f2c",
+    "title": "向量数据库Milvus混合检索",
+    "slug": "12e605ee-e889-8093-a063-e0a44f365f2c",
+    "excerpt": "介绍Milvus的使用，以及混合检索示例代码",
+    "date": "2024-10-29",
+    "tags": [
+      {
+        "id": "9cf41f2d-d2ba-4556-abea-04b951692ca0",
+        "name": "RAG",
+        "color": "blue"
+      },
+      {
+        "id": "5b07160d-953a-410c-ab09-4d2d60f6015d",
+        "name": "LLM",
+        "color": "orange"
+      },
+      {
+        "id": "e1a32a2a-a89b-4433-a0e6-31a5e025ae60",
+        "name": "Vector Store",
+        "color": "purple"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/0bc556f5-3966-4505-8a32-025d3f92e5be/milvus_logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=ad8f87e987f1a5acf0629bdb6692a9cce9dccafec0b64c591ec941e13249d2ac&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2025-02-05T08:21:00.000Z"
+  },
+  {
+    "id": "128605ee-e889-808d-b8d0-d925a4269247",
+    "title": "适用于AI的向量数据库",
+    "slug": "128605ee-e889-808d-b8d0-d925a4269247",
+    "excerpt": "适用于LLM的数据库调查列表，Chroma，Milvus，Elasticsearch，Faiss",
+    "date": "2024-10-24",
+    "tags": [
+      {
+        "id": "9cf41f2d-d2ba-4556-abea-04b951692ca0",
+        "name": "RAG",
+        "color": "blue"
+      },
+      {
+        "id": "e1a32a2a-a89b-4433-a0e6-31a5e025ae60",
+        "name": "Vector Store",
+        "color": "purple"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/d862e8be-7251-449d-b45a-94fe29c7f5e6/%E6%97%A0%E6%A0%87%E9%A2%98.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=2384662c7425685a1c576f96682506db08ad44a9bc6679f95df800f82f8a0d17&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "",
+    "lastUpdated": "2025-02-05T06:19:00.000Z"
+  },
+  {
+    "id": "11c605ee-e889-80ae-8ef8-f4497de6e3d5",
+    "title": "向量/混合检索-Elasticsearch",
+    "slug": "11c605ee-e889-80ae-8ef8-f4497de6e3d5",
+    "excerpt": "介绍ES的docker部署，以及在RAG应用中，向量和混合检索的使用",
+    "date": "2024-10-11",
+    "tags": [
+      {
+        "id": "9cf41f2d-d2ba-4556-abea-04b951692ca0",
+        "name": "RAG",
+        "color": "blue"
+      },
+      {
+        "id": "e1a32a2a-a89b-4433-a0e6-31a5e025ae60",
+        "name": "Vector Store",
+        "color": "purple"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/7c41f9d4-32c9-4eaa-a45a-99a031c41a52/es.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=fdeeb9d16ff7691cf7013dc812ac1aa252b135c963eb8d535a1449749975bc6f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2024-10-24T08:10:00.000Z"
+  },
+  {
+    "id": "1738c66d-44b6-45a1-bfeb-f50062d3efec",
+    "title": "LangGraph实战 子图、流响应",
+    "slug": "1738c66d-44b6-45a1-bfeb-f50062d3efec",
+    "excerpt": "记录Langgraph使用过程中遇到的问题以及解决方法",
+    "date": "2024-09-11",
+    "tags": [
+      {
+        "id": "09278292-d4ee-40dc-bfe7-51482d243c41",
+        "name": "LangGraph",
+        "color": "blue"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/15ea6de7-4463-4ea2-824c-0a3257d0fb1c/PixPin_2024-09-11_11-27-06.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=40e0bfeacbd2f07d24e65d47f72e25e1bdd3674bd1a8fc41680c7a534d0783e7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2024-09-12T01:28:00.000Z"
+  },
+  {
+    "id": "34871ffa-62bc-4995-af00-6faaca757ac8",
+    "title": "向量检索Chroma使用和服务端docker部署",
+    "slug": "34871ffa-62bc-4995-af00-6faaca757ac8",
+    "excerpt": "介绍向量检索数据库Chroma的服务端Docker部署，以及客户端基本的使用",
+    "date": "2024-08-23",
+    "tags": [
+      {
+        "id": "9cf41f2d-d2ba-4556-abea-04b951692ca0",
+        "name": "RAG",
+        "color": "blue"
+      },
+      {
+        "id": "e1a32a2a-a89b-4433-a0e6-31a5e025ae60",
+        "name": "Vector Store",
+        "color": "purple"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/be80de0b-d9b5-4adb-88c4-855e2e64b4bd/PixPin_2024-08-23_10-11-37.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=10bc40c66c256786b113333b76798cbe47d265aa1b5c2589664307fc37ef2ce9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2024-10-24T03:41:00.000Z"
+  },
+  {
+    "id": "6e4516ff-0701-4009-9841-b0f023ca43a6",
+    "title": "LLM部署(docker+vllm+embedding+rerank) 支持工具调用",
+    "slug": "6e4516ff-0701-4009-9841-b0f023ca43a6",
+    "excerpt": "该文档介绍了关于LLM模型部署的内容，包括模型选择、模型下载、模型部署方案以及模型使用和加速方法。推荐的部署方案是使用docker部署，同时提供了本地环境部署的方法。模型加速方面介绍了vllm和flash-attention两种方法。embdding模型，rerank模型",
+    "date": "2024-06-03",
+    "tags": [
+      {
+        "id": "5b07160d-953a-410c-ab09-4d2d60f6015d",
+        "name": "LLM",
+        "color": "orange"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/294a525b-31e7-4d0e-8ffa-6a590fc83347/PixPin_2025-03-27_15-38-48.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=692b78745d1ac2a97d36734cd95f5362e72fb1eabf10ca1ea6a408688a17b989&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2025-03-27T07:39:00.000Z"
+  },
+  {
+    "id": "4ab81ed7-7622-4ef1-9fc6-1e1ae4edbd99",
+    "title": "如何选择大模型(榜单+指标)",
+    "slug": "4ab81ed7-7622-4ef1-9fc6-1e1ae4edbd99",
+    "excerpt": "在选择大模型之前，需要明确自己对语言、通识、推理、数学、代码、长文本和工具等七大能力的偏好。评测指标包括MMLU、C Eval、ARC-C、BBH、GSM8K、MBPP、Human Eval、L-Eval和T-Eval。常用榜单包括OpenCompass司南榜单、Huggingface榜单和MTEB榜单。",
+    "date": "2024-06-03",
+    "tags": [
+      {
+        "id": "5b07160d-953a-410c-ab09-4d2d60f6015d",
+        "name": "LLM",
+        "color": "orange"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/5199fe50-8ede-4909-842f-2e29cb4f18ad/PixPin_2024-06-03_13-49-11.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=68e0982ef8cc60dc90bfa0f83e52ac58d549419284efb280c3ca52497f2a62ab&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2025-05-16T07:10:00.000Z"
+  },
+  {
+    "id": "ad71285d-325f-42ad-a6f9-28e6cf90571c",
+    "title": "Prompt编写",
+    "slug": "ad71285d-325f-42ad-a6f9-28e6cf90571c",
+    "excerpt": "该文档是关于Prompt编写指南的，介绍了26种技巧与效果，以及进阶的CoT、类推提示法、PoT、ToT和GoT等方法，用于提升大模型的推理能力。",
+    "date": "2024-05-20",
+    "tags": [
+      {
+        "id": "5b07160d-953a-410c-ab09-4d2d60f6015d",
+        "name": "LLM",
+        "color": "orange"
+      },
+      {
+        "id": "37d23808-322a-492d-b4b2-ee49879eebf1",
+        "name": "Prompt",
+        "color": "green"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/51958e21-6ba8-47b4-8475-da7a466e4925/%E6%97%A0%E6%A0%87%E9%A2%98.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=73e973c53c7e303c985b50a28ac7cda0c68e81045fe16dd87ae878c78ec7d111&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "",
+    "lastUpdated": "2024-11-23T01:55:00.000Z"
+  },
+  {
+    "id": "c8a30e22-25df-414c-aa1d-2582622256e5",
+    "title": "修改FastChat使支持工具调用(LangGraph适配FastChat)",
+    "slug": "c8a30e22-25df-414c-aa1d-2582622256e5",
+    "excerpt": "本文介绍了如何修改FastChat以支持工具调用和LangGraph适配FastChat的问题。针对",
+    "date": "2024-05-08",
+    "tags": [
+      {
+        "id": "5b07160d-953a-410c-ab09-4d2d60f6015d",
+        "name": "LLM",
+        "color": "orange"
+      },
+      {
+        "id": "97152d85-0454-43a8-9d9d-405d218ebcf1",
+        "name": "LangChain",
+        "color": "green"
+      },
+      {
+        "id": "09278292-d4ee-40dc-bfe7-51482d243c41",
+        "name": "LangGraph",
+        "color": "blue"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/6a3e2a85-b007-4e34-9ba3-66792f5a8e7c/%E6%97%A0%E6%A0%87%E9%A2%98.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=56ec16825604086c607834149f22bda47a2d7140bbbb9531e799a5d9fc2d3ee1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "",
+    "lastUpdated": "2024-06-20T09:58:00.000Z"
+  },
+  {
+    "id": "ad6de748-8932-498a-84ba-5f5432b43885",
+    "title": "LLM ",
+    "slug": "ad6de748-8932-498a-84ba-5f5432b43885",
+    "excerpt": "需要关注的LLM 相关知识或论文",
+    "date": "2024-04-15",
+    "tags": [
+      {
+        "id": "5b07160d-953a-410c-ab09-4d2d60f6015d",
+        "name": "LLM",
+        "color": "orange"
+      },
+      {
+        "id": "c151ce78-76b6-4408-9af3-550246930d35",
+        "name": "Knowledge",
+        "color": "pink"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/3a0c8bf5-0eb9-4018-a871-084430dace0f/1713164766995wqeqweq.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=bf0fe699451b2afcccdbf344690423ae3b39a782cf0ee0c3fe6005937c6f730b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2024-06-15T05:55:00.000Z"
+  },
+  {
+    "id": "e6d87ac6-dd5b-48b1-8e18-93f7435fdb4a",
+    "title": "AI开发基础资料和相关技术介绍",
+    "slug": "e6d87ac6-dd5b-48b1-8e18-93f7435fdb4a",
+    "excerpt": "这篇文章介绍了关于AI开发的基础资料，包括开发工具LangChain和LlamaIndex，以及LangGraph框架。还讨论了LLMs微调的挑战和提示工程技术的应用。此外，还介绍了RAG（增强检索）的基本原理和优化方法，以及向量数据库和Agent的相关内容。",
+    "date": "2023-08-09",
+    "tags": [
+      {
+        "id": "5b07160d-953a-410c-ab09-4d2d60f6015d",
+        "name": "LLM",
+        "color": "orange"
+      },
+      {
+        "id": "9cf41f2d-d2ba-4556-abea-04b951692ca0",
+        "name": "RAG",
+        "color": "blue"
+      },
+      {
+        "id": "37d23808-322a-492d-b4b2-ee49879eebf1",
+        "name": "Prompt",
+        "color": "green"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/fd2c171f-a706-4a42-94d2-4fd358389777/Snipaste_2023-10-30_15-03-58.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=ef37ab325c1ba2c86997f78f1c948780c9cfbef912e4ecf1af0a4ee860053cf7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2025-06-11T03:37:00.000Z"
+  },
+  {
+    "id": "efa53000-b650-4171-804f-d2d7261ab846",
+    "title": "K8S+Rancher搭建",
+    "slug": "efa53000-b650-4171-804f-d2d7261ab846",
+    "excerpt": "K8S 搭建",
+    "date": "2023-04-01",
+    "tags": [
+      {
+        "id": "92e3fe3f-b310-4c0b-a5c7-d6a13d2735b8",
+        "name": "K8S",
+        "color": "blue"
+      },
+      {
+        "id": "45698362-3f9a-452b-a503-61d82862b342",
+        "name": "Rancher",
+        "color": "brown"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/f3fe4ddb-ef26-452d-b0c5-54cb0137e847/kkk.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=e863a3550a4a26501ca0b5845d63949ea0b8d624324ef1a4cb98ebf1af1c0bbd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2024-06-15T05:56:00.000Z"
+  },
+  {
+    "id": "db974ca7-8565-4823-b420-12b1b204e0a9",
+    "title": "Airflow使用",
+    "slug": "db974ca7-8565-4823-b420-12b1b204e0a9",
+    "excerpt": "Airflow使用心得",
+    "date": "2022-11-11",
+    "tags": [
+      {
+        "id": "036b9539-e58d-410a-87af-7d31b85340ab",
+        "name": "Airflow",
+        "color": "gray"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/909960a5-d567-422c-9bae-7fca7a4c33c3/v2-88f17fef4cc15af76157f1b916de355a_1440w.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=8710375043130ca2686fe5409558c388bf9b9437663c46900b7fc79e89941e7e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2024-06-15T05:56:00.000Z"
+  },
+  {
+    "id": "be4929d1-01c0-4c1c-b553-33639fdd40e7",
+    "title": "企业级知识库选择",
+    "slug": "be4929d1-01c0-4c1c-b553-33639fdd40e7",
+    "excerpt": "知识库选择",
+    "date": "2022-09-14",
+    "tags": [
+      {
+        "id": "c151ce78-76b6-4408-9af3-550246930d35",
+        "name": "Knowledge",
+        "color": "pink"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/dc41d4ea-c6ed-4575-b413-a5c4f276f7eb/Snipaste_2022-10-20_11-15-07.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=f88881cc582c3952dc89106dbc0e503a0c0d7b5fc11c7de3eebfba081be132fe&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "了解",
+    "lastUpdated": "2024-06-15T05:56:00.000Z"
+  },
+  {
+    "id": "224be3c3-178a-49f0-af8e-1528acf9aa94",
+    "title": "QQ Bot+notion实现随手记",
+    "slug": "224be3c3-178a-49f0-af8e-1528acf9aa94",
+    "excerpt": "小玩具",
+    "date": "2022-08-16",
+    "tags": [
+      {
+        "id": "d3bc2b56-caf7-41d7-bf21-3eed98d6b67c",
+        "name": "Notion",
+        "color": "yellow"
+      }
+    ],
+    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/da864e11-683f-4c2d-a264-16ecdf57fff9/d505ac27-153f-4f17-965d-8775a0bd209e/iShot2022-10-15_15.37.17.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TVHADZ76%2F20250618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250618T022123Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDFEoxMIIwfCDvrP2Gxxnui1ypuf1oynWW28IKTWHqjxgIgCvLgHEL0AvgaBVl5GO3AQWKVsld%2BU%2BCQDx1jEhbRbhgqiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDD1miLxQz6nJ8Zl5nircA8Y1RwDFo5UJcR00rZoHT0AI46Y4Vqo0C7b14ACn6yi03d%2BLVnMQnuKwyIM7NjL1VvEYupKG%2FwIqVZ6HWdlSQj2yZZtwYaWQgTzM7xnd2jbit17j%2FyIkN3m9U%2FECzTH2sACHIAJdrHH5%2FF6Q4FAU%2B2MeRjmTm9rbhpFcMYHXDDwPFk935Biexjz1ZFdzHeSrWSoNcC1g8fErLnrxGv8PIYEwI%2BfE2%2BkJyzaVdZwTz%2Fwv964nugqoLjXWIDPUQz6QPWoFJvh2o9533%2FCqlSCA4hSdnjtWIX8jefUGHAMG%2BMOpW3b%2FDyVOpewclLb8L%2F%2B70bmEb%2F86Tj%2F61MZFQ306YfmWpGAm7ycX%2F4EZlRuwJ9byGWuGQPQ3YKPtGVUAH3nlAtHS3bNVWGvs0jnyXcu03CUKxIMYqYo6qFRegegoEhIHo3RqM5yTEI9PNgNxjxAiVBe0dUExPzVWqiGppPlwZdk8yKzJlDxVuH%2Beoz1CINQLq%2BSp83f2jg9mI8Fs1AGMQVUrN9%2F95RW%2BUY35Ne%2BaweugrtnWVpEbwMS%2Fac83y%2Bp5wOoZqXD2m72Ld5g9DvlbawM7eE2vzsmMqYJE5rX%2FRKfTdDfLofPu3xo%2FcU%2FVeu%2BmusmxP31OWeTyzlZhMMmhyMIGOqUBBkGNguw5yjNvh8LeZKhgYDDx9b8ljfwIlVj9buPBW9pEUqsT5mH4e%2BiLyxBz8pI3Dh5FD756gtuSRgUI%2F8LC%2BhmoLu0EHq9mewsFEznAbZTPe2ZfMYdtHA44BzKfFviMqUGbbjdRDb7RR25AcDEcIMQ979M5IbTLmlN2PddMzcuvpp5sfZclRdfwOLBm87jYLJQmqVFrtzismK4wqE3h9O0CgG%2Fm&X-Amz-Signature=3fe0a65a8348d06aee3dfbd31f7a16e1788156814968727c13e091dbe8bf66ee&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "select": "技术",
+    "lastUpdated": "2025-04-11T05:51:00.000Z"
   }
 ]

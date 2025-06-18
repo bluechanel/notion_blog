@@ -1,0 +1,122 @@
+'use client';
+
+import Image from 'next/image';
+import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize from 'rehype-sanitize';
+import rehypeSlug from 'rehype-slug';
+import { PrismAsyncLight  as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { coldarkDark  } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
+import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
+import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash';
+import python from 'react-syntax-highlighter/dist/cjs/languages/prism/python';
+import yaml from 'react-syntax-highlighter/dist/cjs/languages/prism/yaml';
+import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json';
+import { formatDate } from '../../lib/utils';
+import MainLayout from '../layout/MainLayout';
+import TagButton from './TagButton';
+import TableOfContents from './TableOfContents';
+import { Post } from '@/types';
+import { ReactNode } from 'react';
+
+// 注册需要高亮的语言
+SyntaxHighlighter.registerLanguage('tsx', tsx);
+SyntaxHighlighter.registerLanguage('typescript', typescript);
+SyntaxHighlighter.registerLanguage('bash', bash);
+SyntaxHighlighter.registerLanguage('python', python);
+SyntaxHighlighter.registerLanguage('yaml', yaml);
+SyntaxHighlighter.registerLanguage('json', json);
+
+type Props = {
+  post: Post;
+};
+
+const CustomTable = (props: any) => {
+  return (
+    <div className="overflow-x-auto">
+      <table {...props} className="min-w-full" />
+    </div>
+  );
+};
+
+export default function PostContent({ post }: Props) {
+  return (
+    <MainLayout>
+      <div className="max-w-6xl mx-auto px-4 flex gap-8">
+        <article className="flex-1 bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
+          {post.coverImage && (
+            <div className="relative h-64 sm:h-96 w-full">
+              <Image 
+                src={post.coverImage} 
+                alt={post.title} 
+                fill 
+                className="object-cover"
+              />
+            </div>
+          )}
+          
+          <div className="p-8">
+            <header className="mb-8">
+              <div className="flex flex-wrap gap-2 mb-4">
+                {post.tags.map((tag) => (
+                  <TagButton key={tag.id} tag={tag} />
+                ))}
+              </div>
+              <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+                {post.title}
+              </h1>
+              <div className="text-sm text-gray-500 dark:text-gray-400">
+                {formatDate(post.date)}
+              </div>
+            </header>
+            
+            <div className="prose prose-base prose-gray dark:prose-invert max-w-none">
+              <Markdown
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[
+                  rehypeRaw,
+                  rehypeSanitize,
+                  rehypeSlug
+                ]}
+                components={{
+                  table: CustomTable,
+                  code: ({ className, children, ...props }: any) => {
+                    const match = /language-(\w+)/.exec(className || '');
+                    const inline = !className || !match;
+
+                    if (inline) {
+                      return (
+                        <code className="bg-gray-100 dark:bg-gray-800 text-red-600 dark:text-gray-200 rounded px-1 py-0.5" {...props}>
+                          {children}
+                        </code>
+                      );
+                    }
+                    return (
+                      <SyntaxHighlighter
+                        style={coldarkDark}
+                        language={match[1]}
+                        PreTag="div"
+                        {...props}
+                      >
+                        {String(children).replace(/\n$/, '')}
+                      </SyntaxHighlighter>
+                    );
+                  },
+                }}
+              >
+                {post.content}
+              </Markdown>
+            </div>
+          </div>
+        </article>
+        <aside className="hidden lg:block w-64 flex-shrink-0">
+          <div className="sticky top-24">
+            <TableOfContents />
+          </div>
+        </aside>
+      </div>
+    </MainLayout>
+  );
+}
