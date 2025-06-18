@@ -11,7 +11,7 @@ import { PostMeta, Post, Tag } from '../types';
 const DATA_DIR = path.join(process.cwd(), 'src', 'data');
 const POSTS_FILE = path.join(DATA_DIR, 'posts-meta.json');
 const TAGS_FILE = path.join(DATA_DIR, 'tags.json');
-const POST_FILE = path.join(DATA_DIR, 'content');
+const POST_FILE = path.join(DATA_DIR, 'posts');
 
 // 缓存
 let postsCache: PostMeta[] | null = null;

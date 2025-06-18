@@ -6,13 +6,13 @@
  * 
  * 修改：将文章列表和文章内容分开获取和存储，提高维护性
  */
-
 require('dotenv').config({ path: '.env.local' });
 const fs = require('fs');
 const path = require('path');
-const { Client, iteratePaginatedAPI } = require('@notionhq/client');
+const { Client } = require('@notionhq/client');
 const { NotionToMarkdown } = require('notion-to-md');
-const { se } = require('date-fns/locale');
+const axios = require('axios');
+const crypto = require('crypto');
 
 // 初始化Notion客户端
 const notion = new Client({
@@ -24,12 +24,16 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
 
 // 确保数据目录存在
 const DATA_DIR = path.join(__dirname, '..', 'src', 'data');
-const CONTENT_DIR = path.join(DATA_DIR, 'content');
+const IMAGE_DIR = path.join(__dirname, '..', 'public', 'posts');
+const CONTENT_DIR = path.join(DATA_DIR, 'posts');
 if (!fs.existsSync(DATA_DIR)) {
   fs.mkdirSync(DATA_DIR, { recursive: true });
 }
 if (!fs.existsSync(CONTENT_DIR)) {
   fs.mkdirSync(CONTENT_DIR, { recursive: true });
+}
+if (!fs.existsSync(IMAGE_DIR)) {
+  fs.mkdirSync(IMAGE_DIR, { recursive: true });
 }
 
 // 获取博客文章列表
@@ -61,12 +65,55 @@ async function getPosts() {
   return response.results;
 }
 
+// 下载图片并保存到本地
+async function downloadImage(imageUrl, postId) {
+  const { default: imageType } = await import('image-type');
+  try {
+    const response = await axios.get(imageUrl, { responseType: 'arraybuffer' });
+    const buffer = Buffer.from(response.data);
+    const type = await imageType(buffer);
+    if (!type) {
+      throw new Error('无法确定图片类型');
+    }
+
+    // 创建文章的图片目录
+    const postImagesDir = path.join(IMAGE_DIR, postId);
+    if (!fs.existsSync(postImagesDir)) {
+      fs.mkdirSync(postImagesDir, { recursive: true });
+    }
+
+    // 生成图片文件名
+    const hash = crypto.createHash('md5').update(imageUrl).digest('hex');
+    const imageName = `${hash}.${type.ext}`;
+    const imagePath = path.join(postImagesDir, imageName);
+    
+    // 保存图片
+    fs.writeFileSync(imagePath, buffer);
+    
+    // 返回相对路径
+    return `./${postId}/${imageName}`;
+  } catch (error) {
+    console.error(`下载图片失败: ${imageUrl}`, error);
+    return imageUrl; // 如果下载失败，返回原始URL
+  }
+}
+
 // 获取单个博客文章内容
 async function getPostContent(pageId) {
   console.log(`获取文章 ${pageId} 的内容...`);
   const mdBlocks = await n2m.pageToMarkdown(pageId);
-  const mdString = n2m.toMarkdownString(mdBlocks);
   
+  // 处理所有图片块
+  for (const block of mdBlocks) {
+    if (block.type === 'image') {
+      const imageUrl = block.parent.match(/\]\(([^\)]+)\)/)?.[1];
+      if (imageUrl) {
+        const localImagePath = await downloadImage(imageUrl, pageId);
+        block.parent = block.parent.replace(imageUrl, localImagePath);
+      }
+    }
+  }
+  const mdString = n2m.toMarkdownString(mdBlocks);
   return mdString.parent;
 }
 
@@ -155,9 +202,8 @@ function mapNotionPageToPostMeta(page) {
 // 主函数
 async function main() {
 
-
   try {
-    获取所有标签
+    // 获取所有标签
     const tags = await getTags();
     fs.writeFileSync(
       path.join(DATA_DIR, 'tags.json'),
@@ -213,4 +259,4 @@ async function main() {
 }
 
 // 执行主函数
-main();
+main()
