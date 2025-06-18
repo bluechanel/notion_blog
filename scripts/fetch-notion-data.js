@@ -139,7 +139,7 @@ async function getTags() {
 }
 
 // 将Notion页面转换为博客文章元数据格式
-function mapNotionPageToPostMeta(page) {
+async function mapNotionPageToPostMeta(page) {
 
   // 提取封面
   let coverImage = ""
@@ -185,7 +185,8 @@ function mapNotionPageToPostMeta(page) {
       }
     }
   }
-
+    // 下载封面图片
+  coverImage = await downloadImage(coverImage, page.id);
   return {
     id: page.id,
     title,
@@ -222,7 +223,7 @@ async function main() {
     for (const post of posts) {
       try {
         // 1. 处理文章元数据
-        const postMeta = mapNotionPageToPostMeta(post);
+        const postMeta = await mapNotionPageToPostMeta(post);
         postsMetadata.push(postMeta);
         console.log(`处理文章元数据: ${postMeta.title}`);
         
