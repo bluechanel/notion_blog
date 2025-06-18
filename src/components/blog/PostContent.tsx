@@ -41,6 +41,17 @@ const CustomTable = (props: any) => {
   );
 };
 
+const StyledCodeWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children, ...props }) => {
+  return (
+    // 在这里应用你想要的任何 Tailwind 类
+    // rounded-lg: 添加圆角
+    // overflow-hidden: 这是关键！防止内部代码的锐利边角溢出，破坏圆角效果
+    <div {...props} className="rounded-lg overflow-hidden">
+      {children}
+    </div>
+  );
+};
+
 export default function PostContent({ post }: Props) {
   return (
     <MainLayout>
@@ -72,7 +83,7 @@ export default function PostContent({ post }: Props) {
               </div>
             </header>
             
-            <div className="prose prose-base prose-gray dark:prose-invert max-w-none">
+            <div className="prose prose-base prose-gray dark:prose-invert max-w-none p-6 [&_pre]:bg-transparent [&_pre]:p-0">
               <Markdown
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[
@@ -97,7 +108,7 @@ export default function PostContent({ post }: Props) {
                       <SyntaxHighlighter
                         style={coldarkDark}
                         language={match[1]}
-                        PreTag="div"
+                        PreTag={StyledCodeWrapper}
                         {...props}
                       >
                         {String(children).replace(/\n$/, '')}
