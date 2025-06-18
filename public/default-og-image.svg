@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="1200" height="630" fill="#1F2937"/>
+  
+  <!-- 渐变装饰 -->
+  <circle cx="1100" cy="100" r="300" fill="#4F46E5" fill-opacity="0.2"/>
+  <circle cx="100" cy="530" r="300" fill="#4F46E5" fill-opacity="0.2"/>
+  
+  <!-- Blog Title -->
+  <text x="600" y="250" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="bold" fill="white" text-anchor="middle">
+    Wiley Blog
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="350" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="#9CA3AF" text-anchor="middle">
+    AI/LLM Developer Blog
+  </text>
+  
+  <!-- Description -->
+  <text x="600" y="420" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#6B7280" text-anchor="middle">
+    Insights on AI, LLM Development & Technical Innovation
+  </text>
+</svg>

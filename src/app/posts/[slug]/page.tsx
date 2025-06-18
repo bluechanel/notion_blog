@@ -27,10 +27,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: '文章未找到'
     };
   }
+
+  const ogImage = post.coverImage || '/default-og-image.jpg';
   
   return {
-    title: `${post.title} | 我的博客`,
-    description: post.excerpt
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: 'article',
+      publishedTime: post.date,
+      authors: ['你的名字'],
+      tags: post.tags.map(tag => tag.name),
+      images: [{
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: post.title
+      }]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [ogImage]
+    },
+    alternates: {
+      canonical: `https://your-domain.com/posts/${post.slug}`
+    }
   };
 }
 
