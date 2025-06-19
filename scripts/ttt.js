@@ -13,23 +13,6 @@ async function downloadImage(imageUrl, postId) {
       if (!type) {
         throw new Error('无法确定图片类型');
       }
-  
-    //   // 创建文章的图片目录
-    //   const postImagesDir = path.join(CONTENT_DIR, postId, 'images');
-    //   if (!fs.existsSync(postImagesDir)) {
-    //     fs.mkdirSync(postImagesDir, { recursive: true });
-    //   }
-  
-    //   // 生成图片文件名
-    //   const hash = crypto.createHash('md5').update(imageUrl).digest('hex');
-    //   const imageName = `${hash}.${type.ext}`;
-    //   const imagePath = path.join(postImagesDir, imageName);
-      
-    //   // 保存图片
-    //   fs.writeFileSync(imagePath, buffer);
-      
-    //   // 返回相对路径
-    //   return `./images/${imageName}`;
     } catch (error) {
       console.error(`下载图片失败: ${imageUrl}`, error);
       return imageUrl; // 如果下载失败，返回原始URL

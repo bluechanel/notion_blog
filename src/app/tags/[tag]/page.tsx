@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { getAllTags, getPostsByTag } from '../../../lib/static-data';
 import MainLayout from '../../../components/layout/MainLayout';
 import PostCard from '../../../components/blog/PostCard';
+import Link from 'next/link';
 
 
 // 生成静态路径
@@ -12,13 +13,13 @@ export async function generateStaticParams() {
   }));
 }
 
-type Props = {
-  params: { tag: string }
+interface BlogTagPageProps {
+  params: Promise<{ tag: string }>
 }
 
 // 生成元数据
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { tag } = params;
+export async function generateMetadata({ params }: BlogTagPageProps): Promise<Metadata> {
+  const { tag } = await params;
   const posts = getPostsByTag(tag);
   const tagInfo = (await getAllTags()).find(t => t.name === tag);
   
@@ -58,8 +59,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // 标签页面
-export default async function TagPage({ params }: Props) {
-  const { tag } = params;
+export default async function TagPage({ params }: BlogTagPageProps) {
+  const { tag } = await params;
   const posts = getPostsByTag(tag);
   const tagInfo = (await getAllTags()).find(t => t.name === tag);
 
@@ -69,9 +70,9 @@ export default async function TagPage({ params }: Props) {
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">标签未找到</h1>
           <p className="mb-6">抱歉，您请求的标签不存在。</p>
-          <a href="/" className="text-blue-600 hover:underline">
+          <Link href="/" className="text-blue-600 hover:underline">
             返回首页
-          </a>
+          </Link>
         </div>
       </div>
     );

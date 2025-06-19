@@ -19,7 +19,6 @@ import MainLayout from '../layout/MainLayout';
 import TagButton from './TagButton';
 import TableOfContents from './TableOfContents';
 import { Post } from '@/types';
-import { ReactNode } from 'react';
 
 // 注册需要高亮的语言
 SyntaxHighlighter.registerLanguage('tsx', tsx);
@@ -33,7 +32,7 @@ type Props = {
   post: Post;
 };
 
-const CustomTable = (props: any) => {
+const CustomTable: React.FC<React.TableHTMLAttributes<HTMLTableElement>> = (props) => {
   return (
     <div className="overflow-x-auto">
       <table {...props} className="min-w-full" />
@@ -41,7 +40,7 @@ const CustomTable = (props: any) => {
   );
 };
 
-const StyledCodeWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children, ...props }) => {
+const StyledCodeWrapper: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ children, ...props }) => {
   return (
     // 在这里应用你想要的任何 Tailwind 类
     // rounded-lg: 添加圆角
@@ -93,7 +92,7 @@ export default function PostContent({ post }: Props) {
                 ]}
                 components={{
                   table: CustomTable,
-                  code: ({ className, children, ...props }: any) => {
+                  code: ({ className, children, ...props }: { className?: string; children: React.ReactNode } & React.HTMLAttributes<HTMLElement>) => {
                     const match = /language-(\w+)/.exec(className || '');
                     const inline = !className || !match;
 
