@@ -23,7 +23,7 @@ const notion = new Client({
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
 // 确保数据目录存在
-const DATA_DIR = path.join(__dirname, '..', 'src', 'data');
+const DATA_DIR = path.join(__dirname, '..', 'data');
 const IMAGE_DIR = path.join(__dirname, '..', 'public', 'posts');
 const CONTENT_DIR = path.join(DATA_DIR, 'posts');
 if (!fs.existsSync(DATA_DIR)) {
@@ -203,60 +203,61 @@ async function mapNotionPageToPostMeta(page) {
 // 主函数
 async function main() {
 
-  try {
-    // 获取所有标签
-    const tags = await getTags();
-    fs.writeFileSync(
-      path.join(DATA_DIR, 'tags.json'),
-      JSON.stringify(tags, null, 2)
-    );
-    console.log(`保存了 ${tags.length} 个标签到 src/data/tags.json`);
+  // try {
+  //   // 获取所有标签
+  //   const tags = await getTags();
+  //   fs.writeFileSync(
+  //     path.join(DATA_DIR, 'tags.json'),
+  //     JSON.stringify(tags, null, 2)
+  //   );
+  //   console.log(`保存了 ${tags.length} 个标签`);
     
-    // 获取所有文章列表
-    const posts = await getPosts();
-    console.log(`找到 ${posts.length} 篇文章`);
+  //   // 获取所有文章列表
+  //   const posts = await getPosts();
+  //   console.log(`找到 ${posts.length} 篇文章`);
 
 
-    // 处理文章元数据和内容
-    const postsMetadata = [];
+  //   // 处理文章元数据和内容
+  //   const postsMetadata = [];
     
-    for (const post of posts) {
-      try {
-        // 1. 处理文章元数据
-        const postMeta = await mapNotionPageToPostMeta(post);
-        postsMetadata.push(postMeta);
-        console.log(`处理文章元数据: ${postMeta.title}`);
+  //   for (const post of posts) {
+  //     try {
+  //       // 1. 处理文章元数据
+  //       const postMeta = await mapNotionPageToPostMeta(post);
+  //       postsMetadata.push(postMeta);
+  //       console.log(`处理文章元数据: ${postMeta.title}`);
         
-        // 2. 获取并保存文章内容到单独的文件
-        try {
-          const content = await getPostContent(post.id);
-          const contentFilePath = path.join(CONTENT_DIR, `${postMeta.slug}.md`);
-          fs.writeFileSync(contentFilePath, content);
-          console.log(`保存文章内容到: ${contentFilePath}`);
-        } catch (contentError) {
-          console.error(`获取文章 ${post.id} 内容时出错:`, contentError);
-          // 创建一个空的内容文件，以保持一致性
-          fs.writeFileSync(
-            path.join(CONTENT_DIR, `${postMeta.slug}.md`),
-            `# ${postMeta.title}\n\n*内容获取失败*`
-          );
-        }
-      } catch (error) {
-        console.error(`处理文章 ${post.id} 时出错:`, error);
-      }
-    }
+  //       // 2. 获取并保存文章内容到单独的文件
+  //       try {
+  //         const content = await getPostContent(post.id);
+  //         const contentFilePath = path.join(CONTENT_DIR, `${postMeta.slug}.md`);
+  //         fs.writeFileSync(contentFilePath, content);
+  //         console.log(`保存文章内容到: ${contentFilePath}`);
+  //       } catch (contentError) {
+  //         console.error(`获取文章 ${post.id} 内容时出错:`, contentError);
+  //         // 创建一个空的内容文件，以保持一致性
+  //         fs.writeFileSync(
+  //           path.join(CONTENT_DIR, `${postMeta.slug}.md`),
+  //           `# ${postMeta.title}\n\n*内容获取失败*`
+  //         );
+  //       }
+  //     } catch (error) {
+  //       console.error(`处理文章 ${post.id} 时出错:`, error);
+  //     }
+  //     break
+  //   }
     
-    // 保存所有文章元数据
-    fs.writeFileSync(
-      path.join(DATA_DIR, 'posts-meta.json'),
-      JSON.stringify(postsMetadata, null, 2)
-    );
-    console.log(`保存了 ${postsMetadata.length} 篇文章元数据到 src/data/posts-meta.json`);
+  //   // 保存所有文章元数据
+  //   fs.writeFileSync(
+  //     path.join(DATA_DIR, 'posts-meta.json'),
+  //     JSON.stringify(postsMetadata, null, 2)
+  //   );
+  //   console.log(`保存了 ${postsMetadata.length} 篇文章元数据`);
     
-  } catch (error) {
-    console.error('获取Notion数据时出错:', error);
-    process.exit(1);
-  }
+  // } catch (error) {
+  //   console.error('获取Notion数据时出错:', error);
+  //   process.exit(1);
+  // }
 }
 
 // 执行主函数

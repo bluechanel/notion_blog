@@ -1,24 +1,23 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getAllPosts, getPostBySlug } from '../../../lib/static-data';
 import PostContent from '../../../components/blog/PostContent';
+import { getPostData, getAllPostIds } from '@/lib/posts';
 
 
 export const revalidate = 3600;
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const posts = await getAllPosts();
+  const posts = await getAllPostIds();
   return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
-// ✅ 新写法：接收整个 props 对象
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }
 ): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const post = await getPostData(slug);
 
   if (!post) {
     return { title: '文章未找到' };
@@ -58,10 +57,10 @@ export async function generateMetadata(
   };
 }
 
-// ✅ 新写法：接收整个 props 对象
+
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; // ✅ 在函数内部解构
-  const post = await getPostBySlug(slug);
+  const post = await getPostData(slug);
 
   if (!post) {
     return (
