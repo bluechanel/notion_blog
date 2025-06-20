@@ -1,6 +1,6 @@
 {
     "main": ".open-next/worker.js",
-    "name": "my-app",
+    "name": "notion-blog",
     "compatibility_date": "2025-03-25",
     "compatibility_flags": [
       "nodejs_compat"
@@ -8,5 +8,10 @@
     "assets": {
       "directory": ".open-next/assets",
       "binding": "ASSETS"
+    },
+    "observability": {
+      "logs": {
+        "enabled ": false
+      }
     }
 }
