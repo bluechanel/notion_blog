@@ -80,13 +80,20 @@ async function downloadImage(imageUrl, postId) {
     if (!type) {
       throw new Error('无法确定图片类型');
     }
-    console.log(imageUrl);
+    // 从URL中提取原始图片名称
+    const urlParts = imageUrl.split('/');
+    const originalImageName = urlParts[urlParts.length - 1].split('?')[0] || 'image';
 
-
-    // 生成图片文件名
-    const imageName = `${postId}_${Date.now()}.${type.ext}`;
+    
+    // 生成图片文件名，使用postId和原始图片名称
+    const imageName = `${postId}_${originalImageName}`;
     const imagePath = path.join(IMAGE_DIR, imageName);
     
+    // 判断图片是否已经存在，存在则跳过，不存在则写入
+    if (fs.existsSync(imagePath)) {
+      console.log(`图片 ${imageName} 已存在，跳过下载`);
+      return `/images/${imageName}`;
+    }
     // 保存图片
     fs.writeFileSync(imagePath, buffer);
     
@@ -244,7 +251,6 @@ async function main() {
       } catch (error) {
         console.error(`处理文章 ${post.id} 时出错:`, error);
       }
-      break
     }
     
     // 保存所有文章元数据
