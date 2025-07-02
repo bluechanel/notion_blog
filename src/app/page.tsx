@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import PostGallery from '@/components/layout/PostGallery';
 
-
 export const metadata: Metadata = {
   title: '探索技术的边界 | 我的博客',
   description: '分享前端开发、人工智能、云计算等领域的最新技术见解和实践经验，帮助开发者提升技术能力',

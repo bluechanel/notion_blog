@@ -1,16 +1,15 @@
 {
-    "main": ".open-next/worker.js",
-    "name": "notion-blog",
-    "compatibility_date": "2025-03-25",
-    "compatibility_flags": [
-      "nodejs_compat"
-    ],
-    "assets": {
-      "directory": ".open-next/assets",
-      "binding": "ASSETS"
-    },
+  "main": ".open-next/worker.js",
+  "name": "notion_blog",
+  "compatibility_date": "2025-03-25",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
     "observability": {
-      "enabled": true,
-      "head_sampling_rate": 0.1
-    }
+    "enabled": true
+  }
 }

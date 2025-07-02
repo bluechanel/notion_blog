@@ -13,7 +13,7 @@ export default function PostCard({ postMeta }: PostCardProps) {
       {postMeta.coverImage && (
         <div className="relative h-48 w-full">
           <Image 
-            src={`/posts/${postMeta.coverImage}`} 
+            src={postMeta.coverImage} 
             alt={postMeta.title} 
             fill 
             className="object-cover"

@@ -1,12 +1,28 @@
+'use client'
+
 import MainLayout from '@/components/layout/MainLayout';
 import PostCard from '@/components/blog/PostCard';
 import TagButton from '@/components/blog/TagButton';
 import TagCloud from '@/components/blog/TagCloud';
-import { getPostsMeta, getAllTags } from '@/lib/posts';
+import { Tag, PostMeta } from '@/types';
+import { useEffect, useState } from 'react';
 
-export default async function PostGallery() {
-  const tags = await getAllTags();
-  const postsMeta = await getPostsMeta()
+
+export default function PostGallery() {
+  const [tags, setTags] = useState<Tag[]>([]);
+  const [postsMeta, setPostsMeta] = useState<PostMeta[]>([]);
+
+  useEffect(() => {
+    fetch('/tags/tags.json')
+      .then(res => res.json())
+      .then(data => setTags(data as Tag[]));
+  }, []);
+
+  useEffect(() => {
+    fetch('/posts/posts-meta.json')
+      .then(res => res.json())
+      .then(data => setPostsMeta(data as PostMeta[]));
+  }, []);
 
   return (
     <MainLayout activePage="home">

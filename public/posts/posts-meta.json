@@ -1,0 +1,29 @@
+[
+  {
+    "id": "222605ee-e889-8098-b91e-f684acac99d2",
+    "title": "编写支持VLLM部署Qwen3-32B的MCP Cleint/Server",
+    "slug": "222605ee-e889-8098-b91e-f684acac99d2",
+    "excerpt": "本文详细介绍了MCP Server与MCP Client的开发并给出了示例代码，支持将MCP tool转换为OpenAI tool，使其支持了使用VLLM部署的本地大模型Qwen3-32B。并进行了简单的测试验证，完整的完成了数据库查询，文件写入等MCP tool的调用。",
+    "date": "2025-03-18",
+    "tags": [
+      {
+        "id": "9af1a9d1-bb7a-452b-a0fe-9ab5508094db",
+        "name": "AI",
+        "color": "default"
+      },
+      {
+        "id": "027f5601-38c5-4ead-befc-f456e7bf0752",
+        "name": "MCP",
+        "color": "orange"
+      },
+      {
+        "id": "5b07160d-953a-410c-ab09-4d2d60f6015d",
+        "name": "LLM",
+        "color": "orange"
+      }
+    ],
+    "coverImage": "/images/222605ee-e889-8098-b91e-f684acac99d2_1751420104713.png",
+    "select": "技术",
+    "lastUpdated": "2025-06-30T08:14:00.000Z"
+  }
+]
