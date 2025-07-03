@@ -19,6 +19,7 @@ import MainLayout from '../layout/MainLayout';
 import TagButton from './TagButton';
 import TableOfContents from './TableOfContents';
 import { Post } from "contentlayer/generated";
+import { LinkPreview } from "@/components/blog/LinkPreview";
 
 
 // 注册需要高亮的语言
@@ -40,14 +41,12 @@ const CustomTable: React.FC<React.TableHTMLAttributes<HTMLTableElement>> = (prop
 
 const StyledCodeWrapper: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ children, ...props }) => {
   return (
-    // 在这里应用你想要的任何 Tailwind 类
-    // rounded-lg: 添加圆角
-    // overflow-hidden: 这是关键！防止内部代码的锐利边角溢出，破坏圆角效果
     <div {...props} className="rounded-lg overflow-hidden">
       {children}
     </div>
   );
 };
+
 
 const CustomCodeComponent: Components['code'] = ({ className, children, ...props }) => {
   const match = /language-(\w+)/.exec(className || '');
@@ -55,7 +54,7 @@ const CustomCodeComponent: Components['code'] = ({ className, children, ...props
   // 如果是行内代码
   if (inline) {
     return (
-      <code className="bg-gray-100 dark:bg-gray-800 text-red-600 dark:text-gray-200 rounded px-1 py-0.5" {...props}>
+      <code className="bg-gray-100 dark:bg-gray-800 text-red-600 dark:text-gray-200 rounded px-1 py-0.5 font-normal" {...props}>
         {children}
       </code>
     );
@@ -130,7 +129,8 @@ export default function PostContent({ post }: {post: Post}) {
                 ]}
                 components={{
                   table: CustomTable,
-                  code: CustomCodeComponent
+                  code: CustomCodeComponent,
+                  a: ({ href }) => <LinkPreview href={href} />, // ✅ 注入 LinkPreview
                 }}
               >
                 {post.body.raw}

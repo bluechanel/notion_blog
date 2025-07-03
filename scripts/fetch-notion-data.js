@@ -12,6 +12,7 @@ const path = require('path');
 const { Client } = require('@notionhq/client');
 const { NotionToMarkdown } = require('notion-to-md');
 const axios = require('axios');
+const crypto = require('crypto');
 
 // 初始化Notion客户端
 const notion = new Client({
@@ -59,13 +60,12 @@ async function downloadImage(imageUrl, postId) {
     if (!type) {
       throw new Error('无法确定图片类型');
     }
-    // 从URL中提取原始图片名称
-    const urlParts = imageUrl.split('/');
-    const originalImageName = urlParts[urlParts.length - 1].split('?')[0] || 'image';
+    // 计算图片哈希值
+    const hash = crypto.createHash('md5').update(buffer).digest('hex');
 
     
     // 生成图片文件名，使用postId和原始图片名称
-    const imageName = `${postId}_${originalImageName}`;
+    const imageName = `${postId}_${hash}.${type.ext}`;
     const imagePath = path.join(IMAGE_DIR, imageName);
     
     // 判断图片是否已经存在，存在则跳过，不存在则写入
@@ -235,7 +235,6 @@ ${content}`
       } catch (error) {
         console.error(`处理文章 ${post.id} 时出错:`, error);
       }
-      break
     }
     
   } catch (error) {

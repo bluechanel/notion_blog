@@ -25,6 +25,7 @@
     "next": "15.3.3",
     "next-contentlayer2": "^0.5.8",
     "notion-to-md": "^3.1.9",
+    "open-graph-scraper": "^6.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-markdown": "^10.1.0",
