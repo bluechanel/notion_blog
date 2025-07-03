@@ -12,7 +12,6 @@ const path = require('path');
 const { Client } = require('@notionhq/client');
 const { NotionToMarkdown } = require('notion-to-md');
 const axios = require('axios');
-const crypto = require('crypto');
 
 // 初始化Notion客户端
 const notion = new Client({
@@ -23,16 +22,9 @@ const notion = new Client({
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
 // 确保数据目录存在
-const TAGS_DIR = path.join(__dirname, '..', 'public', 'tags');
-const BLOG_META_DIR = path.join(__dirname, '..', 'public', 'posts');
-const BLOG_CONTENT_DIR = path.join(__dirname, '..', 'public', 'posts');
+const BLOG_CONTENT_DIR = path.join(__dirname, '..', 'posts');
 const IMAGE_DIR = path.join(__dirname, '..', 'public', 'images');
-if (!fs.existsSync(TAGS_DIR)) {
-  fs.mkdirSync(TAGS_DIR, { recursive: true });
-}
-if (!fs.existsSync(BLOG_META_DIR)) {
-  fs.mkdirSync(BLOG_META_DIR, { recursive: true });
-}
+
 if (!fs.existsSync(BLOG_CONTENT_DIR)) {
   fs.mkdirSync(BLOG_CONTENT_DIR, { recursive: true });
 }
@@ -52,19 +44,6 @@ async function getPosts() {
   console.log('获取文章列表...');
   const response = await notion.databases.query({
     database_id: databaseId,
-    // 移除排序，使脚本更通用
-    // sorts: [
-    //   {
-    //     property: 'Date',
-    //     direction: 'descending',
-    //   },
-    // ],
-    // filter: {
-    //   property: 'Published',
-    //   checkbox: {
-    //     equals: true,
-    //   },
-    // },
   });
   
   return response.results;
@@ -211,14 +190,7 @@ async function mapNotionPageToPostMeta(page) {
 async function main() {
 
   try {
-    // 获取所有标签
-    const tags = await getTags();
-    fs.writeFileSync(
-      path.join(TAGS_DIR, 'tags.json'),
-      JSON.stringify(tags, null, 2)
-    );
-    console.log(`保存了 ${tags.length} 个标签`);
-    
+
     // 获取所有文章列表
     const posts = await getPosts();
     console.log(`找到 ${posts.length} 篇文章`);
@@ -237,8 +209,20 @@ async function main() {
         // 2. 获取并保存文章内容到单独的文件
         try {
           const content = await getPostContent(post.id);
+          // 修改content 符合标准
+          const full_md = `---
+id: ${postMeta.id}
+title: ${postMeta.title}
+slug: ${postMeta.slug}
+excerpt: ${postMeta.excerpt}
+date: ${postMeta.date}
+coverImage: ${postMeta.coverImage}
+lastUpdated: ${postMeta.lastUpdated}
+tags: ${postMeta.tags.map(tag => tag.color?`${tag.color}:${tag.name}`:tag.name).join(',')}  
+---
+${content}`
           const contentFilePath = path.join(BLOG_CONTENT_DIR, `${postMeta.slug}.md`);
-          fs.writeFileSync(contentFilePath, content);
+          fs.writeFileSync(contentFilePath, full_md);
           console.log(`保存文章内容到: ${contentFilePath}`);
         } catch (contentError) {
           console.error(`获取文章 ${post.id} 内容时出错:`, contentError);
@@ -251,14 +235,8 @@ async function main() {
       } catch (error) {
         console.error(`处理文章 ${post.id} 时出错:`, error);
       }
+      break
     }
-    
-    // 保存所有文章元数据
-    fs.writeFileSync(
-      path.join(BLOG_META_DIR, 'posts-meta.json'),
-      JSON.stringify(postsMetadata, null, 2)
-    );
-    console.log(`保存了 ${postsMetadata.length} 篇文章元数据`);
     
   } catch (error) {
     console.error('获取Notion数据时出错:', error);

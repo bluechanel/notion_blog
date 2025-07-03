@@ -2,47 +2,33 @@
 
 import MainLayout from '@/components/layout/MainLayout';
 import PostCard from '@/components/blog/PostCard';
-import TagButton from '@/components/blog/TagButton';
-import TagCloud from '@/components/blog/TagCloud';
-import { Tag, PostMeta } from '@/types';
-import { useEffect, useState } from 'react';
+// import TagButton from '@/components/blog/TagButton';
+// import TagCloud from '@/components/blog/TagCloud';
+import { Post } from 'contentlayer/generated';
 
 
-export default function PostGallery() {
-  const [tags, setTags] = useState<Tag[]>([]);
-  const [postsMeta, setPostsMeta] = useState<PostMeta[]>([]);
+export default function PostGallery({ posts }: {posts: Post[]}) {
 
-  useEffect(() => {
-    fetch('/tags/tags.json')
-      .then(res => res.json())
-      .then(data => setTags(data as Tag[]));
-  }, []);
-
-  useEffect(() => {
-    fetch('/posts/posts-meta.json')
-      .then(res => res.json())
-      .then(data => setPostsMeta(data as PostMeta[]));
-  }, []);
 
   return (
     <MainLayout activePage="home">
       <div className="relative text-center mb-16">
-        <div className="absolute inset-0 -z-10 overflow-hidden">
+        {/* <div className="absolute inset-0 -z-10 overflow-hidden">
           <TagCloud tags={tags} />
-        </div>
+        </div> */}
         <div className="relative z-10 bg-gray-100/80 dark:bg-gray-900/80 backdrop-blur-sm py-8 rounded-lg">
           <h1 className="text-4xl font-bold text-indigo-600 mb-4">AI & LLM Development Insights</h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">Exploring artificial intelligence, large language models, and cutting-edge technology innovations</p>
-          <div className="flex justify-center gap-3">
+          {/* <div className="flex justify-center gap-3">
             {tags.map((tag) => (
               <TagButton key={tag.id} tag={tag} />
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-        {postsMeta.map((post) => (
-          <PostCard key={post.id} postMeta={post} />
+        {posts.map((post) => (
+          <PostCard key={post.id} post={post} />
         ))}
       </div>
     </MainLayout>

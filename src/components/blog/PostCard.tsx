@@ -1,20 +1,22 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { PostMeta } from '../../types';
+import { Post } from 'contentlayer/generated';
 import { formatDate, getTagColorClass } from '../../lib/utils';
 
-interface PostCardProps {
-  postMeta: PostMeta;
-}
 
-export default function PostCard({ postMeta }: PostCardProps) {
+export default function PostCard({ post }: {post: Post}) {
+
+  const tags = post.tags?.split(",").map((tag) => {
+    return {"color": tag.split(":")[0], "name": tag.split(":")[1]}
+  }) ?? [];
+
   return (
     <article className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out">
-      {postMeta.coverImage && (
+      {post.coverImage && (
         <div className="relative h-48 w-full">
           <Image 
-            src={postMeta.coverImage} 
-            alt={postMeta.title} 
+            src={post.coverImage} 
+            alt={post.title} 
             fill 
             className="object-cover"
           />
@@ -22,9 +24,9 @@ export default function PostCard({ postMeta }: PostCardProps) {
       )}
       <div className="p-6">
         <div className="flex flex-wrap gap-2 mb-3">
-          {postMeta.tags.map((tag) => (
+          {tags.map((tag) => (
             <span 
-              key={tag.id} 
+              key={tag.name} 
               className={`text-xs px-2 py-1 rounded-full ${getTagColorClass(tag.color)}`}
             >
               {tag.name}
@@ -32,17 +34,17 @@ export default function PostCard({ postMeta }: PostCardProps) {
           ))}
         </div>
         <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
-          <Link href={`/posts/${postMeta.slug}`} className="hover:underline">
-            {postMeta.title}
+          <Link href={`/posts/${post.slug}`} className="hover:underline">
+            {post.title}
           </Link>
         </h2>
-        {postMeta.excerpt && (
+        {post.excerpt && (
           <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-            {postMeta.excerpt}
+            {post.excerpt}
           </p>
         )}
         <div className="text-sm text-gray-500 dark:text-gray-400">
-          {formatDate(postMeta.date)}
+          {formatDate(post.date)}
         </div>
       </div>
     </article>

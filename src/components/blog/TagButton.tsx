@@ -1,5 +1,9 @@
 import Link from 'next/link';
-import { Tag } from '../../types';
+
+interface Tag {
+  name: string,
+  color: string
+}
 
 interface TagButtonProps {
   tag: Tag;
