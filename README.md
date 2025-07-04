@@ -1,7 +1,7 @@
 # TODO
 
 * [x] 增加文章标题的emoji
-* [ ] 替换blog ico
+* [x] 替换blog ico
 * [ ] 增加文章阅读时间
 * [x] cloudflare部署demo
 * [ ] 修复blog内容
