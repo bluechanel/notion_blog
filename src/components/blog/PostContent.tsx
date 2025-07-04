@@ -19,7 +19,6 @@ import MainLayout from '../layout/MainLayout';
 import TagButton from './TagButton';
 import TableOfContents from './TableOfContents';
 import { Post } from "contentlayer/generated";
-import { LinkPreview } from "@/components/blog/LinkPreview";
 
 
 // 注册需要高亮的语言
@@ -130,7 +129,7 @@ export default function PostContent({ post }: {post: Post}) {
                 components={{
                   table: CustomTable,
                   code: CustomCodeComponent,
-                  a: ({ href }) => <LinkPreview href={href} />, // ✅ 注入 LinkPreview
+                  a: ({ href }) => <a className="text-blue-500 underline underline-offset-4 decoration-blue-500" href={href}>{href}</a>
                 }}
               >
                 {post.body.raw}
