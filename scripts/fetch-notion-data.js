@@ -127,6 +127,9 @@ async function getTags() {
 // 将Notion页面转换为博客文章元数据格式
 async function mapNotionPageToPostMeta(page) {
 
+  // 提取emoji
+  let emoji = page.icon.emoji || "📄"
+
   // 提取封面
   let coverImage = ""
   if (page.cover.type === "external") {
@@ -146,7 +149,7 @@ async function mapNotionPageToPostMeta(page) {
   let select = '';
   for (const [key, value] of Object.entries(page.properties)) {
     if (key.toLowerCase() === 'name') {
-      title = value.title[0].plain_text;
+      title = `${emoji} ${value.title[0].plain_text}`;
     }
     // 提取摘要 - 尝试查找名为Excerpt的rich_text属性
     if (key.toLowerCase() === 'description') {
