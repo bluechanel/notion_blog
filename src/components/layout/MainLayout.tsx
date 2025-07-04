@@ -1,5 +1,5 @@
 import Header from './Header';
-import Footer from './Footer';
+// import Footer from './Footer';
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ export default function MainLayout({ children, activePage = 'home' }: MainLayout
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-16">
         {children}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

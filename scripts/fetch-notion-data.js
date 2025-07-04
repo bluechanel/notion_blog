@@ -84,6 +84,10 @@ async function downloadImage(imageUrl, postId) {
   }
 }
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // 获取单个博客文章内容
 async function getPostContent(pageId) {
   console.log(`获取文章 ${pageId} 的内容...`);
@@ -96,6 +100,7 @@ async function getPostContent(pageId) {
       if (imageUrl) {
         const localImagePath = await downloadImage(imageUrl, pageId);
         block.parent = block.parent.replace(imageUrl, localImagePath);
+        await sleep(1000); // 等待1秒，防止被封
       }
     }
   }
@@ -211,7 +216,9 @@ async function main() {
         
         // 2. 获取并保存文章内容到单独的文件
         try {
-          const content = await getPostContent(post.id);
+          let content = await getPostContent(post.id);
+          // 修改同一个blog的超链接引用
+          content = content.replaceAll("www.notion.so", `posts/${process.env.BLOG_BASE_URL}`)
           // 修改content 符合标准
           const full_md = `---
 id: ${postMeta.id}
@@ -231,7 +238,7 @@ ${content}`
           console.error(`获取文章 ${post.id} 内容时出错:`, contentError);
           // 创建一个空的内容文件，以保持一致性
           fs.writeFileSync(
-            path.join(CONTENT_DIR, `${postMeta.slug}.md`),
+            path.join(BLOG_CONTENT_DIR, `${postMeta.slug}.md`),
             `# ${postMeta.title}\n\n*内容获取失败*`
           );
         }
