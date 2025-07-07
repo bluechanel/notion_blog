@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 interface Tag {
   name: string,
   color: string
@@ -28,11 +26,10 @@ export default function TagButton({ tag, className = '' }: TagButtonProps) {
   const { bg, text } = getTagColorClass(tag.color);
   
   return (
-    <Link 
-      href={`/tags/${tag.name}`}
+    <div 
       className={`text-xs px-2 py-1 rounded-full ${bg} ${text} hover:opacity-80 transition-opacity ${className}`}
     >
       {tag.name}
-    </Link>
+    </div>
   );
 }

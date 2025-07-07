@@ -1,57 +1,49 @@
-import Link from 'next/link';
-
 interface Tag {
   name: string;
   color: string;
 }
 
-export default function TagsCard() {
-  // 热门标签数据
-  const popularTags: Tag[] = [
-    { name: 'AI', color: 'default' },
-    { name: 'RAG', color: 'blue' },
-    { name: 'LMM', color: 'orange' },
-    { name: 'Vector Store', color: 'purple' },
-    { name: 'Prompt', color: 'green' },
-    { name: 'MongoDB', color: 'green' },
-    { name: 'MCP', color: 'red' },
-    { name: 'LangChain', color: 'cyan' },
-    { name: 'LangGraph', color: 'indigo' },
-    { name: 'Notion', color: 'rose' },
-  ];
+interface TagsCardProps {
+  tags: Tag[];
+  selectedTag: string | null;
+  onSelectTag: (tag: string) => void;
+}
 
-  const getTagColorClass = (color: string) => {
-    const colorMap: Record<string, { bg: string; text: string }> = {
-      blue: { bg: 'bg-blue-100', text: 'text-blue-800' },
-      green: { bg: 'bg-green-100', text: 'text-green-800' },
-      purple: { bg: 'bg-purple-100', text: 'text-purple-800' },
-      orange: { bg: 'bg-orange-100', text: 'text-orange-800' },
-      red: { bg: 'bg-red-100', text: 'text-red-800' },
-      yellow: { bg: 'bg-yellow-100', text: 'text-yellow-800' },
-      cyan: { bg: 'bg-cyan-100', text: 'text-cyan-800' },
-      indigo: { bg: 'bg-indigo-100', text: 'text-indigo-800' },
-      rose: { bg: 'bg-rose-100', text: 'text-rose-800' },
-      default: { bg: 'bg-gray-100', text: 'text-gray-800' }
+export default function TagsCard({ tags, selectedTag, onSelectTag }: TagsCardProps) {
+  const getTagColorClass = (color: string, isSelected: boolean) => {
+    const colorMap: Record<string, { bg: string; text: string, selectedBg: string }> = {
+      blue: { bg: 'bg-blue-100', text: 'text-blue-800', selectedBg: 'bg-blue-500' },
+      green: { bg: 'bg-green-100', text: 'text-green-800', selectedBg: 'bg-green-500' },
+      purple: { bg: 'bg-purple-100', text: 'text-purple-800', selectedBg: 'bg-purple-500' },
+      orange: { bg: 'bg-orange-100', text: 'text-orange-800', selectedBg: 'bg-orange-500' },
+      red: { bg: 'bg-red-100', text: 'text-red-800', selectedBg: 'bg-red-500' },
+      yellow: { bg: 'bg-yellow-100', text: 'text-yellow-800', selectedBg: 'bg-yellow-500' },
+      cyan: { bg: 'bg-cyan-100', text: 'text-cyan-800', selectedBg: 'bg-cyan-500' },
+      indigo: { bg: 'bg-indigo-100', text: 'text-indigo-800', selectedBg: 'bg-indigo-500' },
+      rose: { bg: 'bg-rose-100', text: 'text-rose-800', selectedBg: 'bg-rose-500' },
+      default: { bg: 'bg-gray-100', text: 'text-gray-800', selectedBg: 'bg-gray-500' }
     };
   
-    return colorMap[color] || colorMap.default;
+    const { bg, text, selectedBg } = colorMap[color] || colorMap.default;
+    return isSelected ? `${selectedBg} text-white` : `${bg} ${text}`;
   };
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
       <div className="p-6">
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">热门标签</h2>
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">标签</h2>
         <div className="flex flex-wrap gap-2">
-          {popularTags.map((tag) => {
-            const { bg, text } = getTagColorClass(tag.color);
+          {tags.map((tag) => {
+            const isSelected = selectedTag === tag.name;
+            const colorClass = getTagColorClass(tag.color, isSelected);
             return (
-              <Link 
+              <button
                 key={tag.name}
-                href={`/tags/${tag.name}`}
-                className={`px-3 py-1 rounded-full ${bg} ${text} text-sm hover:opacity-80 transition-opacity`}
+                onClick={() => onSelectTag(tag.name)}
+                className={`px-3 py-1 rounded-full ${colorClass} text-sm hover:opacity-80 transition-opacity`}
               >
                 {tag.name}
-              </Link>
+              </button>
             );
           })}
         </div>

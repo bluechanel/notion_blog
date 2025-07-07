@@ -36,7 +36,9 @@ export default function Header({ activePage = 'home' }: HeaderProps) {
             {linkItems.map(link => (
               <Link 
                 key={link.name}
-                href={link.url} 
+                href={link.url}
+                target={link.url === "/" ? "_self" : "_blank"}
+                rel="noopener noreferrer"
                 className={`${activePage === 'home' ? 'font-medium' : ''} text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white`}
               >
                 {link.name}
