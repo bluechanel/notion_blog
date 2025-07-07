@@ -43,9 +43,15 @@ export default function PostCard({ post }: {post: Post}) {
             {post.excerpt}
           </p>
         )}
-        <div className="text-sm text-gray-500 dark:text-gray-400">
-          {formatDate(post.date)}
+        <div className='flex flex-row justify-between'>
+          <div className="text-sm text-gray-500 dark:text-gray-400">
+            {formatDate(post.date)}
+          </div>
+          <div className="text-sm text-gray-500 dark:text-gray-400">
+            {Math.round(post.readTime || 1)} min read
+          </div>
         </div>
+
       </div>
     </article>
   );

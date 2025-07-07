@@ -19,6 +19,7 @@ import MainLayout from '../layout/MainLayout';
 import TagButton from './TagButton';
 import TableOfContents from './TableOfContents';
 import { Post } from "contentlayer/generated";
+import { Hourglass, CalendarDays, Clock} from 'lucide-react';
 
 
 // 注册需要高亮的语言
@@ -113,8 +114,21 @@ export default function PostContent({ post }: {post: Post}) {
               <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
                 {post.title}
               </h1>
-              <div className="text-sm text-gray-500 dark:text-gray-400">
-                {formatDate(post.date)}
+              <div className='flex flex-row '>
+                <div className="flex flex-row text-sm text-gray-500 dark:text-gray-400">
+                  <CalendarDays className='mr-1 w-4 h-4'/>
+                  {formatDate(post.date)}
+                </div>
+                <div className="h-4 w-0.5 bg-gray-300 dark:bg-gray-600 mx-4"></div>
+                <div className="flex flex-row text-sm text-gray-500 dark:text-gray-400">
+                  <Clock className='mr-1 w-4 h-4'/>
+                  {formatDate(post.lastUpdated)}
+                </div>
+                <div className="h-4 w-0.5 bg-gray-300 dark:bg-gray-600 mx-4"></div>
+                <div className="flex flex-row text-sm text-gray-500 dark:text-gray-400">
+                  <Hourglass className='mr-1 w-4 h-4'/>
+                  {Math.round(post.readTime || 1)} min read
+                </div>
               </div>
             </header>
             

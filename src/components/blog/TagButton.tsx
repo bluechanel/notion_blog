@@ -30,7 +30,7 @@ export default function TagButton({ tag, className = '' }: TagButtonProps) {
   return (
     <Link 
       href={`/tags/${tag.name}`}
-      className={`px-4 py-2 rounded-full ${bg} ${text} hover:opacity-80 transition-opacity ${className}`}
+      className={`text-xs px-2 py-1 rounded-full ${bg} ${text} hover:opacity-80 transition-opacity ${className}`}
     >
       {tag.name}
     </Link>
