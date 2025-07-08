@@ -10,6 +10,8 @@
 * [ ] github workflow 自动编译文档并更新github
 * [x] 修复og-image
 * [x] 下载指定blog文章
+* [ ] 增加书单
+* [ ] 增加片单
 
 
 同步命令 `node --loader ts-node/esm fetch-notion-data.ts --id e6d87ac6-dd5b-48b1-8e18-93f7435fdb4a`

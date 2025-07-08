@@ -8,6 +8,7 @@ interface LinkItem {
 
 const linkItems: LinkItem[] = [
   { name: '首页', url: '/' },
+  { name: '书单', url: '/books' },
   { name: '关于', url: 'https://about.wileyzhang.com/' }
 ];
 
